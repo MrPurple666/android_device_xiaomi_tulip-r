@@ -563,7 +563,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.1 \
     android.hardware.secure_element@1.0 \
     librmnetctl \
-    libxml2 \
     libprotobuf-cpp-full \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
@@ -613,10 +612,7 @@ PRODUCT_PACKAGES += \
 # Tetheroffload
 PRODUCT_PACKAGES += \
     ipacm \
-    ipacm.rc \
-    IPACM_cfg.xml \
-    libipanat \
-    liboffloadhal
+    IPACM_cfg.xml
 
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
