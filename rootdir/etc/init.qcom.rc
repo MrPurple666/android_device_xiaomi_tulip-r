@@ -622,6 +622,9 @@ on property:persist.vendor.ssr.enable_ramdumps=1
 on property:persist.vendor.ssr.enable_ramdumps=0
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
 
+    # Thermal Profile
+    write /sys/class/thermal/thermal_message/sconfig 0
+
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
 
