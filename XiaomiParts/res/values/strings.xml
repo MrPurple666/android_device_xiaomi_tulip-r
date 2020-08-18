@@ -23,10 +23,6 @@
     <string name="headphone_gain">Headphone gain</string>
     <string name="mic_gain">Microphone gain</string>
 
-    <!-- Mi Note 3 Settings -->
-    <string name="jason_pref_title">Device Settings</string>
-    <string name="jason_pref_summary">Mi Note 3 extra settings</string>
-
     <!-- KCal -->
     <string name="device_kcal_title">Display Color Calibration</string>
 
@@ -40,19 +36,6 @@
 
     <string name="vibration_title">Haptic feedback</string>
     <string name="vibration_strength_title">Strength</string>
-
-    <!-- Thermal Profiles -->
-    <string name="thermal_profile_title">Thermal</string>
-    <string name="thermal_title">Thermal Settings</string>
-    <string name="thermal_summary">Choose your Thermal Profile</string>
-    <string name="thermal_dialogTitle">Choose your Thermal Profile</string>
-
-    <!-- Values for Thermal Presets -->
-    <string name="thermal_performance">Performance</string>
-    <string name="thermal_battery">Battery</string>
-    <string name="thermal_gaming">Gaming</string>
-    <string name="thermal_balance">Balance</string>
-    <string name="thermal_extreme_battery">Extreme Battery</string>
 
     <string name="audio_title">Audio</string>
 
