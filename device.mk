@@ -214,6 +214,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     liboverlay \
     libqdMetaData \
+    libstagefright_enc_common \
     libqdMetaData.system \
     libtinyxml \
     vendor.display.config@2.0 \
