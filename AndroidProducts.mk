@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/pixys_tulip.mk
+    $(LOCAL_DIR)/superior_tulip.mk
 
 COMMON_LUNCH_CHOICES := \
-   pixys_tulip-user \
-   pixys_tulip-userdebug \
-   pixys_tulip-eng
+   superior_tulip-user \
+   superior_tulip-userdebug \
+   superior_tulip-eng
