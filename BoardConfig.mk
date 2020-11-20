@@ -182,7 +182,7 @@ TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_VERSION := 4.4
 
 TARGET_KERNEL_CONFIG := AtomX-tulip_defconfig
-TARGET_KERNEL_SOURCE := kernel/xiaomi/tulip
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
 
 # Enable stats logging in LMKD
 TARGET_LMKD_STATS_LOG := true
