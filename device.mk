@@ -688,6 +688,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 	 
-# GoogleCamera
+# Prebuilt Packages
 PRODUCT_PACKAGES += \
-    GoogleCamera
+    GCamGo
