@@ -1,5 +1,5 @@
 #Build FP to be picked by both system and vendor
-BUILD_FINGERPRINT := "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys"
+BUILD_FINGERPRINT := "google/coral/coral:11/RQ1A.201205.008/6943376:user/release-keys"
 
 # Apex
 ifeq ($(ENABLE_APEX), true)
