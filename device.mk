@@ -644,3 +644,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
    XiaomiParts
+
+# Recorder
+PRODUCT_PACKAGES += \
+    OPScreenRecorder
+
