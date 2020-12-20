@@ -31,14 +31,9 @@ ifeq ($(ENABLE_APEX), true)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 endif
 
-#Gapps
-$(call inherit-product-if-exists, vendor/google/gms/config.mk)
-$(call inherit-product-if-exists, vendor/google/pixel/config.mk)
-
 # Inherit proprietary files
 $(call inherit-product, vendor/xiaomi/tulip/tulip-vendor.mk)
 $(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk)
-$(call inherit-product-if-exists, vendor/gapps/common/common-vendor.mk)
 
 # Device Tree Path
 DEVICE_PATH := device/xiaomi/tulip
