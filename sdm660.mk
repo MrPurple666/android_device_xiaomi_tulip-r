@@ -217,6 +217,7 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libqdMetaData \
     libqdMetaData.system \
+    libqdMetaData.vendor \
     libtinyxml \
     vendor.display.config@1.9 \
     vendor.display.config@1.9_vendor
@@ -389,6 +390,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libavmediaserviceextensions \
     libmediametrics \
+    libstagefright_enc_common \
     libregistermsext \
     mediametrics
 
