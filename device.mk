@@ -687,3 +687,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
     GCamGo
+
+# XiaomiParts
+PRODUCT_PACKAGES += \
+    XiaomiParts \
+    init.gpuboost.rc \
+    init.gpuboost.sh \
+    init.cpuboost.rc \
+    init.cpuboost.sh \
+    init.parallax.rc \
+    init.parallax.sh
+

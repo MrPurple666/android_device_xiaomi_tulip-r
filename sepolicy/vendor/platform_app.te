@@ -1,2 +1,7 @@
+r_dir_file(platform_app, sysfs_kgsl)
+
+# Face Unlock
+get_prop(platform_app, camera_prop)
+
+# FPS Info
 allow platform_app sysfs_fps:file { getattr open read };
-allow platform_app sysfs_graphics:dir search;
