@@ -39,6 +39,20 @@ gpu.stats.debug.level                   u:object_r:vendor_default_prop:s0
 # Dirac
 persist.audio.dirac.                u:object_r:dirac_prop:s0
 
+
+# HAL3
+persist.camera.HAL3.enable                    u:object_r:camera_prop:s0
+
+# GPUboost
+persist.gpuboost.profile           u:object_r:gpuboost_prop:s0
+
+# CPUboost
+persist.cpuboost.profile           u:object_r:cpuboost_prop:s0
+
+persist.cpucore.profile            u:object_r:cpucore_prop:s0
+persist.lkm.profile		   u:object_r:lkm_prop:s0
+persist.tcp.profile		   u:object_r:tcp_prop:s0
+
 # MPCTL
 sys.post_boot.parsed                u:object_r:vendor_mpctl_prop:s0
 
