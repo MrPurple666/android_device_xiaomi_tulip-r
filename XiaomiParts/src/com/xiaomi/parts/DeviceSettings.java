@@ -77,7 +77,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_SPEAKER_GAIN = "speaker_gain";
     public static final String SPEAKER_GAIN_PATH = "/sys/kernel/sound_control/speaker_gain";
     public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
-
     public static final String PREF_USB_FASTCHARGE = "fastcharge";
     public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
     public static final String PREF_KEY_FPS_INFO = "fps_info";
@@ -136,7 +135,7 @@ public class DeviceSettings extends PreferenceFragment implements
     private CustomSeekBarPreference mEarpieceGain;
     private CustomSeekBarPreference mSpeakerGain;
 
-    //private SecureSettingSwitchPreference mFastcharge;
+    private SecureSettingSwitchPreference mFastcharge;
 
     private SecureSettingSwitchPreference mBacklightDimmer;
     private SecureSettingSwitchPreference mTouchboost;
@@ -244,7 +243,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
         mSpeakerGain = (CustomSeekBarPreference) findPreference(PREF_SPEAKER_GAIN);
         mSpeakerGain.setOnPreferenceChangeListener(this);
-/*
+
         if (FileUtils.fileWritable(USB_FASTCHARGE_PATH)) {
             mFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
             mFastcharge.setEnabled(Fastcharge.isSupported());
@@ -253,7 +252,7 @@ public class DeviceSettings extends PreferenceFragment implements
         } else {
             getPreferenceScreen().removePreference(findPreference(CATEGORY_FASTCHARGE));
         }
-*/
+
         if (FileUtils.fileWritable(MSM_TOUCHBOOST_PATH)) {
             mTouchboost = (SecureSettingSwitchPreference) findPreference(PREF_MSM_TOUCHBOOST);
             mTouchboost.setChecked(FileUtils.getFileValueAsBoolean(MSM_TOUCHBOOST_PATH, true));
@@ -430,11 +429,9 @@ public class DeviceSettings extends PreferenceFragment implements
                 mGPUBOOST.setSummary(mGPUBOOST.getEntry());
                 FileUtils.setStringProp(GPUBOOST_SYSTEM_PROPERTY, (String) value);
 
-/*
             case PREF_USB_FASTCHARGE:
                 FileUtils.setValue(USB_FASTCHARGE_PATH, (boolean) value);
                 break;
-*/
 
             case PREF_CPUBOOST:
                 mCPUBOOST.setValue((String) value);
