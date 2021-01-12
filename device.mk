@@ -637,9 +637,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     GCamGo
 
-PRODUCT_PACKAGES += \
-   XiaomiParts
-
 # Recorder
 PRODUCT_PACKAGES += \
     OPScreenRecorder
