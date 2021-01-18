@@ -17,20 +17,23 @@
 
 set -e
 
-DEVICE_COMMON=sdm660-common
-VENDOR=xiaomi
+export DEVICE=tulip
+export VENDOR=xiaomi
+export DEVICE_BRINGUP_YEAR=2019
 
 # Load extract_utils and do some sanity checks
-COMMON_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$COMMON_DIR" ]]; then COMMON_DIR="$PWD"; fi
+MY_DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 if [[ -z "$DEVICE_DIR" ]]; then
-    DEVICE_DIR="${COMMON_DIR}/../${DEVICE}"
+    DEVICE_DIR="${MY_DIR}/../${DEVICE}"
 fi
 
-ROOT="$COMMON_DIR"/../../..
+LINEAGE_ROOT="$MY_DIR"/../../..
 
-HELPER="$LINEAGE_ROOT"/vendor/xtended/build/tools/extract_utils.sh
+DEVICE_BLOB_ROOT="$AOSP_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+
+HELPER="$ROOT"/vendor/xtended/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -104,11 +107,13 @@ function blob_fixup() {
     esac
 }
 
+patchelf --add-needed camera.sdm660_shim.so "$DEVICE_BLOB_ROOT"/vendor/lib/hw/camera.sdm660.so
+
 # Initialize the common helper
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$ROOT" true $CLEAN_VENDOR
 
-if [[ "$ONLY_DEVICE" = "false" ]] && [[ -s "${COMMON_DIR}"/proprietary-files.txt ]]; then
-    extract "$COMMON_DIR"/proprietary-files.txt "$SRC" "${KANG}" --section "${SECTION}"
+if [[ "$ONLY_DEVICE" = "false" ]] && [[ -s "${MY_DIR}"/proprietary-files.txt ]]; then
+    extract "$MY_DIR"/proprietary-files.txt "$SRC" "${KANG}" --section "${SECTION}"
 fi
 if [[ "$ONLY_COMMON" = "false" ]] && [[ -s "${DEVICE_DIR}"/proprietary-files.txt ]]; then
     if [[ ! "$IS_COMMON" = "true" ]]; then
@@ -119,4 +124,4 @@ if [[ "$ONLY_COMMON" = "false" ]] && [[ -s "${DEVICE_DIR}"/proprietary-files.txt
     extract "${DEVICE_DIR}"/proprietary-files.txt "$SRC" "${KANG}" --section "${SECTION}"
 fi
 
-"$COMMON_DIR"/setup-makefiles.sh
+"$MY_DIR"/setup-makefiles.sh

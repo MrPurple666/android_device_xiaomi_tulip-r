@@ -133,11 +133,17 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.privapp.list=org.codeaurora.snapcam \
+    persist.vendor.camera.depth.focus.cb=0 \
     persist.vendor.camera.dual.isp.sync=0 \
     persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.eis.enable=1 \
     persist.vendor.camera.exif.make=Xiaomi \
-    persist.vendor.camera.privapp.list=org.codeaurora.snapcam
+    persist.vendor.camera.imglib.usefdlite=1 \
+    persist.vendor.camera.isp.clock.optmz=0 \
+    persist.vendor.camera.linkpreview=0 \
+    persist.vendor.camera.preview.ubwc=0 \
+    persist.vendor.camera.stats.test=0 \
+    persist.vendor.camera.privapp.list=org.codeaurora.snapcam \
     vendor.camera.aux.packageblacklist=com.discord \
     camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam \
     vendor.camera.aux.packagelist=com.google.android.GoogleCamera,com.android.camera,org.codeaurora.snapcam \
@@ -146,7 +152,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.bokeh.switch.lux=290 \
     persist.camera.auxswitch.threshold=330 \
     persist.camera.mainswitch.threshold=419 \
-    persist.camera.expose.aux=1
+    persist.camera.expose.aux=1 \
+    persist.vendor.imx376_ofilm.light.lux=275 \
+    persist.vendor.imx376_ofilm.low.lux=290 \
+    persist.vendor.imx376_sunny.light.lux=275 \
+    persist.vendor.imx376_sunny.low.lux=290
 
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
@@ -158,6 +168,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.hwui.renderer=opengl \
     debug.sf.latch_unsignaled=1 \
     debug.sf.enable_hwc_vds=1 \
     debug.sf.hw=1 \
@@ -178,8 +189,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.enable_fb_ubwc=1 \
     vendor.video.disable.ubwc=1 \
     vendor.display.enable_default_color_mode=0 \
-    video.disable.ubwc=1
-
+    video.disable.ubwc=1 \
+    ro.sf.lcd_density=405
+   
 # The default sf phase offset is set to 6ms, to avoid it be included into next
 # vsync threshold, set high fps early sf and next vsync threshold phase offset
 # to 6.1ms, which is bigger than all sf phase offsets in normal frame rate.
@@ -188,6 +200,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.high_fps_early_gl_phase_offset_ns=9000000 \
     debug.sf.phase_offset_threshold_for_next_vsync_ns=6100000
 
+# Dual SIM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.multisim.config=dsds
+    
 # Fling
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.min.fling_velocity=160 \
@@ -199,6 +215,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.ime.kb_pad_port_b=1 \
     ro.com.google.ime.corner_key_r=32
 
+# Graphics
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno
+    
 # HAL1 apps list
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.hal1.packagelist=com.whatsapp,com.android.camera,com.android.camera2,com.instagram.android \
@@ -289,6 +310,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.VT_CAM_INTERFACE=2 \
     persist.radio.data_con_rprt=1 \
     persist.vendor.data.mode=concurrent \
+    persist.vendor.iwlan.enable=true \
     persist.vendor.qti.telephony.vt_cam_interface=1 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.atfwd.start=true \
@@ -354,6 +376,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
 
+# USB debugging at boot
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.debuggable=1
+    
 # WFD
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.wfd.enable=1 \
