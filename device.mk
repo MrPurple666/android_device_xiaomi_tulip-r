@@ -241,10 +241,6 @@ PRODUCT_COPY_FILES += \
 #Density
 TARGET_SCREEN_DENSITY := 400
 
-# Doze
-PRODUCT_PACKAGES += \
-    XiaomiDoze
-
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
@@ -687,10 +683,6 @@ PRODUCT_PACKAGES += \
 # WiFi Display JAR
 PRODUCT_BOOT_JARS += \
     WfdCommon
-
-# XiaomiParts
-PRODUCT_PACKAGES += \
-   XiaomiParts
 
 # Force triple frame buffers
 PRODUCT_PROPERTY_OVERRIDES += \
