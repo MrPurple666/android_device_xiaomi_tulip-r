@@ -11,20 +11,6 @@
      limitations under the License.
 -->
 <resources>
-    <string-array name="spectrum_profiles">
-        <item>@string/spectrum_balance</item>
-        <item>@string/spectrum_performance</item>
-        <item>@string/spectrum_battery</item>
-        <item>@string/spectrum_gaming</item>
-        <item>@string/spectrum_ubattery</item>
-    </string-array>
-    <string-array name="spectrum_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
 
     <!-- Values for Dirac headset pref -->
     <string-array name="dirac_headset_pref_entries" translatable="false">
@@ -191,27 +177,6 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-    </string-array>
-
-    <string-array name="cpucore_profiles">
-        <item>@string/cpucore_zero</item>
-        <item>@string/cpucore_one</item>
-        <item>@string/cpucore_two</item>
-        <item>@string/cpucore_three</item>
-        <item>@string/cpucore_four</item>
-        <item>@string/cpucore_five</item>
-        <item>@string/cpucore_six</item>
-        <item>@string/cpucore_seven</item>
-    </string-array>
-    <string-array name="cpucore_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
     </string-array>
 
     <string-array name="lkmprofile_profiles">

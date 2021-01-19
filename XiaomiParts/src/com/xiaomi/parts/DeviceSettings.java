@@ -48,11 +48,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String TAG = "XiaomiParts";
 
-    public static final String KEY_YELLOW_TORCH_BRIGHTNESS = "yellow_torch_brightness";
-    public static final String KEY_WHITE_TORCH_BRIGHTNESS = "white_torch_brightness";
-    public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/class/leds/led:torch_0/max_brightness";
-    public static final String TORCH_2_BRIGHTNESS_PATH = "/sys/class/leds/led:torch_1/max_brightness";
-
     public static final String PREF_CHARGING_LED = "charging_led";
     public static final String CHARGING_LED_PATH = "/sys/class/leds/charging/max_brightness";
 
@@ -62,9 +57,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_VIBSTRENGTH = "vib_strength";
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
-
-    public static final String PREF_SPECTRUM = "spectrum";
-    public static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
     public static final String PREF_ENABLE_DIRAC = "dirac_enabled";
     public static final String PREF_HEADSET = "dirac_headset_pref";
@@ -88,14 +80,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String HIGH_PERF_AUDIO = "highperfaudio";
     public static final String HIGH_AUDIO_PATH = "/sys/module/snd_soc_wcd9330/parameters/high_perf_mode";
 
-    public static final String PERF_MSM_THERMAL = "msmthermal";
-    public static final String MSM_THERMAL_PATH = "/sys/module/msm_thermal/parameters/enabled";
-    public static final String PERF_CORE_CONTROL = "corecontrol";
-    public static final String CORE_CONTROL_PATH = "/sys/module/msm_thermal/core_control/enabled";
-    public static final String PERF_VDD_RESTRICTION = "vddrestrict";
-    public static final String VDD_RESTRICTION_PATH = "/sys/module/msm_thermal/vdd_restriction/enabled";
-    public static final String PREF_CPUCORE = "cpucore";
-    public static final String CPUCORE_SYSTEM_PROPERTY = "persist.cpucore.profile";
     public static final String PREF_LKM = "lkmprofile";
     public static final String LKM_SYSTEM_PROPERTY = "persist.lkm.profile";
     public static final String PREF_TCP = "tcpcongestion";
@@ -117,8 +101,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
 
-    private CustomSeekBarPreference mWhiteTorchBrightness;
-    private CustomSeekBarPreference mYellowTorchBrightness;
     private SecureSettingSwitchPreference mHighAudio;
     private SecureSettingSwitchPreference mMsmThermal;
     private SecureSettingSwitchPreference mCoreControl;
@@ -128,7 +110,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingListPreference mTCP;
     private VibratorStrengthPreference mVibratorStrength;
     private Preference mKcal;
-    private SecureSettingListPreference mSPECTRUM;
     private Preference mAmbientPref;
     private SecureSettingSwitchPreference mEnableDirac;
     private SecureSettingListPreference mHeadsetType;
@@ -165,13 +146,6 @@ public class DeviceSettings extends PreferenceFragment implements
             return true;
         });
 
-        mWhiteTorchBrightness = (CustomSeekBarPreference) findPreference(KEY_WHITE_TORCH_BRIGHTNESS);
-        mWhiteTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH));
-        mWhiteTorchBrightness.setOnPreferenceChangeListener(this);
-
-        mYellowTorchBrightness = (CustomSeekBarPreference) findPreference(KEY_YELLOW_TORCH_BRIGHTNESS);
-        mYellowTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_2_BRIGHTNESS_PATH));
-        mYellowTorchBrightness.setOnPreferenceChangeListener(this);
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
 
@@ -193,10 +167,6 @@ public class DeviceSettings extends PreferenceFragment implements
             }
         });
 
-        mSPECTRUM = (SecureSettingListPreference) findPreference(PREF_SPECTRUM);
-        mSPECTRUM.setValue(FileUtils.getStringProp(SPECTRUM_SYSTEM_PROPERTY, "0"));
-        mSPECTRUM.setSummary(mSPECTRUM.getEntry());
-        mSPECTRUM.setOnPreferenceChangeListener(this);
 
         if (FileUtils.fileWritable(BACKLIGHT_DIMMER_PATH)) {
             mBacklightDimmer = (SecureSettingSwitchPreference) findPreference(PREF_BACKLIGHT_DIMMER);
@@ -283,35 +253,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mCPUBOOST.setSummary(mCPUBOOST.getEntry());
         mCPUBOOST.setOnPreferenceChangeListener(this);
 
-        if (FileUtils.fileWritable(MSM_THERMAL_PATH)) {
-            mMsmThermal = (SecureSettingSwitchPreference) findPreference(PERF_MSM_THERMAL);
-            mMsmThermal.setChecked(FileUtils.getFilesValueAsBoolean(MSM_THERMAL_PATH, true));
-            mMsmThermal.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(PERF_MSM_THERMAL));
-        }
-
-        if (FileUtils.fileWritable(CORE_CONTROL_PATH)) {
-            mCoreControl = (SecureSettingSwitchPreference) findPreference(PERF_CORE_CONTROL);
-            mCoreControl.setChecked(FileUtils.getFileValueAsBoolean(CORE_CONTROL_PATH, true));
-            mCoreControl.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(PERF_CORE_CONTROL));
-        }
-
-        if (FileUtils.fileWritable(VDD_RESTRICTION_PATH)) {
-            mVddRestrict = (SecureSettingSwitchPreference) findPreference(PERF_VDD_RESTRICTION);
-            mVddRestrict.setChecked(FileUtils.getFileValueAsBoolean(VDD_RESTRICTION_PATH, true));
-            mVddRestrict.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(PERF_VDD_RESTRICTION));
-        }
-
-        mCPUCORE = (SecureSettingListPreference) findPreference(PREF_CPUCORE);
-        mCPUCORE.setValue(FileUtils.getStringProp(CPUCORE_SYSTEM_PROPERTY, "0"));
-        mCPUCORE.setSummary(mCPUCORE.getEntry());
-        mCPUCORE.setOnPreferenceChangeListener(this);
-
         mLKM = (SecureSettingListPreference) findPreference(PREF_LKM);
         mLKM.setValue(FileUtils.getStringProp(LKM_SYSTEM_PROPERTY, "0"));
         mLKM.setSummary(mLKM.getEntry());
@@ -345,32 +286,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
         switch (key) {
-            case KEY_WHITE_TORCH_BRIGHTNESS:
-                 FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
-                break;
-
-            case KEY_YELLOW_TORCH_BRIGHTNESS:
-                FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH, (int) value);
-                break;
-
-            case PERF_MSM_THERMAL:
-                FileUtils.setValue(MSM_THERMAL_PATH, (boolean) value);
-                break;
-
-            case PERF_CORE_CONTROL:
-                FileUtils.setValue(CORE_CONTROL_PATH, (boolean) value);
-                break;
-
-            case PERF_VDD_RESTRICTION:
-                FileUtils.setValue(VDD_RESTRICTION_PATH, (boolean) value);
-                break;
-
-            case PREF_CPUCORE:
-                mCPUCORE.setValue((String) value);
-                mCPUCORE.setSummary(mCPUCORE.getEntry());
-                FileUtils.setStringProp(CPUCORE_SYSTEM_PROPERTY, (String) value);
-                break;
-
             case PREF_LKM:
                 mLKM.setValue((String) value);
                 mLKM.setSummary(mLKM.getEntry());
@@ -381,12 +296,6 @@ public class DeviceSettings extends PreferenceFragment implements
                 mTCP.setValue((String) value);
                 mTCP.setSummary(mTCP.getEntry());
                 FileUtils.setStringProp(TCP_SYSTEM_PROPERTY, (String) value);
-                break;
-
-            case PREF_SPECTRUM:
-                mSPECTRUM.setValue((String) value);
-                mSPECTRUM.setSummary(mSPECTRUM.getEntry());
-                FileUtils.setStringProp(SPECTRUM_SYSTEM_PROPERTY, (String) value);
                 break;
 
             case HIGH_PERF_AUDIO:
@@ -440,7 +349,8 @@ public class DeviceSettings extends PreferenceFragment implements
                 mGPUBOOST.setValue((String) value);
                 mGPUBOOST.setSummary(mGPUBOOST.getEntry());
                 FileUtils.setStringProp(GPUBOOST_SYSTEM_PROPERTY, (String) value);
-
+		break;
+		
             case PREF_USB_FASTCHARGE:
                 FileUtils.setValue(USB_FASTCHARGE_PATH, (boolean) value);
                 break;

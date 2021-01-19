@@ -14,28 +14,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        android:key="torch"
-        android:title="@string/torch_title">
-
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
-            android:defaultValue="150"
-            android:key="white_torch_brightness"
-            android:max="255"
-            app:min="1"
-            android:icon="@drawable/ic_torch"
-            android:title="@string/white_torch_brightness_title" />
-	
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
-            android:defaultValue="150"
-            android:key="yellow_torch_brightness"
-            android:max="255"
-            app:min="1"
-            android:icon="@drawable/ic_torch"
-            android:title="@string/yellow_torch_brightness_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="vibration"
         android:title="@string/vibration_title">
 
@@ -76,22 +54,6 @@
             android:icon="@drawable/ic_backlight"
             android:title="@string/backlight_dimmer"
             android:summary="@string/backlight_summary" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="spectrum_profile"
-        android:title="@string/spectrum_profile_title">
-
-        <com.xiaomi.parts.preferences.SecureSettingListPreference
-            android:defaultValue="0"
-            android:dialogTitle="@string/spectrum_dialogTitle"
-            android:entries="@array/spectrum_profiles"
-            android:entryValues="@array/spectrum_values"
-            android:key="spectrum"
-            android:summary="@string/spectrum_summary"
-            android:icon="@drawable/ic_spectrum" 
-            android:title="@string/spectrum_title" />
 
     </PreferenceCategory>
 
@@ -143,37 +105,6 @@
     <PreferenceCategory
         android:key="thermal"
         android:title="@string/thermal_title">
-
-        <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
-            android:key="msmthermal"
-            android:defaultValue="false"
-            android:title="@string/msmthermal_title"
-            android:icon="@drawable/ic_mtherm"
-            android:summary="@string/msmthermal_summary" />
-
-        <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
-            android:key="corecontrol"
-            android:defaultValue="false"
-            android:title="@string/corecontrol_title"
-            android:icon="@drawable/ic_ccontrol"
-            android:summary="@string/corecontrol_summary" />
-
-        <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
-            android:key="vddrestrict"
-            android:defaultValue="false"
-            android:title="@string/vddrestrict_title"
-            android:icon="@drawable/ic_vddres"
-            android:summary="@string/vddrestrict_summary" />
-
-        <com.xiaomi.parts.preferences.SecureSettingListPreference
-            android:defaultValue="0"
-            android:dialogTitle="@string/cpucore_dialogTitle"
-            android:entries="@array/cpucore_profiles"
-            android:entryValues="@array/cpucore_values"
-            android:key="cpucore"
-            android:summary="@string/cpucore_summary"
-            android:icon="@drawable/ic_cpucore" 
-            android:title="@string/cpucore_title" />
 
         <com.xiaomi.parts.preferences.SecureSettingListPreference
             android:defaultValue="0"
