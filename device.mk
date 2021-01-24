@@ -684,6 +684,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
+
 # Force triple frame buffers
 PRODUCT_PROPERTY_OVERRIDES += \
 	 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
@@ -691,3 +692,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Prebuilt Packages
 PRODUCT_PACKAGES += \
     GCamGo
+
+# XiaomiParts
+PRODUCT_PACKAGES += \
+    XiaomiParts \
+    init.gpuboost.rc \
+    init.gpuboost.sh \
+    init.cpuboost.rc \
+    init.cpuboost.sh \
+    init.parallax.rc \
+    init.parallax.sh \
+    init.spectrum.rc \
+    init.spectrum.sh \
+    init.camera.rc \
+    init.camera.sh

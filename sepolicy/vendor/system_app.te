@@ -16,3 +16,53 @@ allow system_app sysfs_leds:dir search;
 set_prop(system_app, system_prop);
 
 r_dir_file(system_app, sysfs_battery_supply)
+
+# XiaomiParts
+allow system_app kcal_dev:file rw_file_perms;
+allow system_app kcal_dev:dir search;
+allow system_app sysfs_vibrator:file { read write };
+allow system_app sysfs_vibrator:file open;
+allow system_app sysfs_vibrator:file getattr;
+allow system_app spectrum_prop:property_service set;
+allow system_app camera_prop:property_service set;
+allow system_app sysfs_leds:file { open getattr write };
+allow system_app sysfs:file { getattr open read write };
+allow system_app sysfs_backlight:file { open read getattr write };
+allow system_app sysfs_egain:file { open read getattr write };
+allow system_app sysfs_hgain:file { open read getattr write };
+allow system_app sysfs_mgain:file { open read getattr write };
+allow system_app sysfs_sgain:file { open read getattr write };
+allow system_app sysfs_fcharge:file { open read getattr write };
+allow system_app sysfs_tbrightness:file { open getattr write };
+allow system_app spectrum_prop:property_service set;
+allow system_app sysfs_fps:file rw_file_perms;
+allow system_app sysfs_torch:dir search;
+allow system_app sysfs_torch:file rw_file_perms;
+allow system_app sysfs_leds:dir { search };
+allow system_app sysfs_fastcharge:file { open read getattr write };
+allow system_app sysfs_msmthermal:file { open read getattr write };
+allow system_app sysfs_corecontrol:file { open read getattr write };
+allow system_app sysfs_vddrestrict:file { open read getattr write };
+allow system_app cpucore_prop:property_service set;
+allow system_app sysfs_highperfaudio:file { open read getattr write };
+allow system_app lkm_prop:property_service set;
+allow system_app tcp_prop:property_service set;
+
+get_prop(system_app, camera_prop);
+get_prop(system_app, spectrum_prop);
+get_prop(system_app, cpucore_prop);
+get_prop(system_app, lkm_prop);
+get_prop(system_app, tcp_prop);
+
+# Boosts
+allow system_app sysfs_touchboost:file { open read getattr write };
+allow system_app sysfs_msm_perf:dir { search };
+
+allow system_app gpuboost_prop:property_service set;
+get_prop(system_app, gpuboost_prop);
+set_prop(system_app, gpuboost_prop);
+
+allow system_app cpuboost_prop:property_service set;
+get_prop(system_app, cpuboost_prop);
+set_prop(system_app, cpuboost_prop);
+

@@ -11,3 +11,12 @@ allow init sysfs_graphics:file { open write };
 allow init sysfs_battery_supply:file setattr;
 allow init socket_device:sock_file { unlink setattr create };
 allow init blkio_dev:file {create};
+
+# SELinux Switch
+allow init su:process { noatsecure  rlimitinh  siginh  transition };
+
+# Boost
+allow init vendor_file:file { execute execute_no_trans };
+
+# USB Fastcharger
+allow init sysfs_fcharge:file { write };
