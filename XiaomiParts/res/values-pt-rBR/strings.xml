@@ -12,7 +12,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="advanced_settings">Xiaomi Parts</string>
-    <string name="advanced_settings_summary">Mini Gerenciador de Kernel para o Redmi Note 7/7s</string>
+    <string name="advanced_settings_summary">Customizações específicas do dispositivo</string>
 
     <string name="display_title">Tela</string>
 
