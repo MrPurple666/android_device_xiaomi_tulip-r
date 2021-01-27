@@ -479,6 +479,8 @@ public class DeviceSettings extends PreferenceFragment implements
                 mGPUBOOST.setSummary(mGPUBOOST.getEntry());
                 FileUtils.setStringProp(GPUBOOST_SYSTEM_PROPERTY, (String) value);
 
+		break;
+
             case PREF_USB_FASTCHARGE:
                 FileUtils.setValue(USB_FASTCHARGE_PATH, (boolean) value);
                 break;
