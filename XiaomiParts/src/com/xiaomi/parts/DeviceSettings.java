@@ -69,9 +69,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String EARPIECE_GAIN_PATH = "/sys/kernel/sound_control/earpiece_gain";
     public static final String PREF_SPEAKER_GAIN = "speaker_gain";
     public static final String SPEAKER_GAIN_PATH = "/sys/kernel/sound_control/speaker_gain";
-    public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
-    public static final String PREF_USB_FASTCHARGE = "fastcharge";
-    public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
     public static final String PREF_KEY_FPS_INFO = "fps_info";
 
     public static final String PREF_MSM_TOUCHBOOST = "touchboost";
@@ -89,9 +86,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String GPUBOOST_SYSTEM_PROPERTY = "persist.gpuboost.profile";
     public static final String PREF_CPUBOOST = "cpuboost";
     public static final String CPUBOOST_SYSTEM_PROPERTY = "persist.cpuboost.profile";
-
-    //public static final String PREF_USB_FASTCHARGE = "fastcharge";
-    //public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
 
     private CustomSeekBarPreference mTorchBrightness;
 
@@ -118,8 +112,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private CustomSeekBarPreference mMicrophoneGain;
     private CustomSeekBarPreference mEarpieceGain;
     private CustomSeekBarPreference mSpeakerGain;
-
-    private SecureSettingSwitchPreference mFastcharge;
 
     private SecureSettingSwitchPreference mBacklightDimmer;
     private SecureSettingSwitchPreference mTouchboost;
@@ -225,15 +217,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
         mSpeakerGain = (CustomSeekBarPreference) findPreference(PREF_SPEAKER_GAIN);
         mSpeakerGain.setOnPreferenceChangeListener(this);
-
-        if (FileUtils.fileWritable(USB_FASTCHARGE_PATH)) {
-            mFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
-            mFastcharge.setEnabled(Fastcharge.isSupported());
-            mFastcharge.setChecked(Fastcharge.isCurrentlyEnabled(this.getContext()));
-            mFastcharge.setOnPreferenceChangeListener(new Fastcharge(getContext()));
-        } else {
-            getPreferenceScreen().removePreference(findPreference(CATEGORY_FASTCHARGE));
-        }
 
         if (FileUtils.fileWritable(MSM_TOUCHBOOST_PATH)) {
             mTouchboost = (SecureSettingSwitchPreference) findPreference(PREF_MSM_TOUCHBOOST);
@@ -350,10 +333,6 @@ public class DeviceSettings extends PreferenceFragment implements
                 mGPUBOOST.setSummary(mGPUBOOST.getEntry());
                 FileUtils.setStringProp(GPUBOOST_SYSTEM_PROPERTY, (String) value);
 		break;
-		
-            case PREF_USB_FASTCHARGE:
-                FileUtils.setValue(USB_FASTCHARGE_PATH, (boolean) value);
-                break;
 
             case PREF_CPUBOOST:
                 mCPUBOOST.setValue((String) value);
