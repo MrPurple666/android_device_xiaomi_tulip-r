@@ -28,3 +28,6 @@ type dirac_prop, property_type;
 #Power
 type power_prop, property_type;
 type vendor_power_prop, property_type;
+
+# Spectrum
+type spectrum_prop, property_type;
