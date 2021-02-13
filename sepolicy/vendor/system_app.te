@@ -29,8 +29,6 @@ allow system_app sysfs_vibrator:dir search;
 allow system_app sysfs_vibrator:file { read write };
 allow system_app sysfs_vibrator:file open;
 allow system_app sysfs_vibrator:file getattr;
-allow system_app spectrum_prop:property_service set;
-get_prop(system_app, spectrum_prop);
 allow system_app camera_prop:property_service set;
 get_prop(system_app, camera_prop);
 allow system_app sysfs_leds:dir search;
@@ -43,7 +41,6 @@ allow system_app sysfs_mgain:file { open read getattr write };
 allow system_app sysfs_sgain:file { open read getattr write };
 allow system_app sysfs_fcharge:file { open read getattr write };
 allow system_app sysfs_tbrightness:file { open getattr write };
-allow system_app spectrum_prop:property_service set;
 allow system_app sysfs_fps:file rw_file_perms;
 
 allow system_app sysfs_torch:dir search;
