@@ -104,7 +104,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingListPreference mTCP;
     private VibratorStrengthPreference mVibratorStrength;
     private Preference mKcal;
-    private Preference mAmbientPref;
     private SecureSettingSwitchPreference mEnableDirac;
     private SecureSettingListPreference mHeadsetType;
     private SecureSettingListPreference mPreset;
