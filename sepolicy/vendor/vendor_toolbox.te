@@ -1,3 +1,4 @@
+type vendor_toolbox, domain;
 
 init_daemon_domain(vendor_toolbox)
 
