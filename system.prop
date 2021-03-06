@@ -29,6 +29,7 @@ telephony.lteOnCdmaDevice=1
 
 # System restart
 persist.vendor.ssr.restart_level=ALL_ENABLE
+ro.build.shutdown_timeout=2
 
 # Thermal configs path
 sys.thermal.data.path=/data/vendor/thermal/
