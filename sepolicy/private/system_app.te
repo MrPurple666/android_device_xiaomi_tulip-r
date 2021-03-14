@@ -1,1 +1,3 @@
 hal_client_domain(system_app, hal_mlipay)
+
+allow system_app default_android_service:service_manager { find };
