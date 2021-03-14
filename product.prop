@@ -1,0 +1,34 @@
+# Fling
+ro.min.fling_velocity=160 
+ro.max.fling_velocity=20000
+
+# GMS
+ro.com.google.clientidbase.ms=android-xiaomi-rev2
+
+# LMKD
+ro.lmk.low=1001 
+ro.lmk.medium=800 
+ro.lmk.critical=0 
+ro.lmk.critical_upgrade=false 
+ro.lmk.upgrade_pressure=100 
+ro.lmk.downgrade_pressure=100 
+ro.lmk.kill_heaviest_task=true
+ro.lmk.kill_timeout_ms=100 
+ro.lmk.use_minfree_levels=true 
+ro.lmk.log_stats=true 
+ro.lmk.use_psi=false
+
+# OEM Unlock reporting
+ro.oem_unlock_supported=1
+
+# SurfaceFlinger
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true 
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3 
+ro.surface_flinger.max_virtual_display_dimension=4096 
+ro.surface_flinger.protected_contents=true 
+ro.surface_flinger.vsync_event_phase_offset_ns=2000000 
+ro.surface_flinger.vsync_sf_event_phase_offset_ns=6000000
+
+#Storaged
+ro.storaged.event.interval=99999
+

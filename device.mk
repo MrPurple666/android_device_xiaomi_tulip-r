@@ -22,6 +22,8 @@
 #
 
 # Inherit from those products. Most specific first.
+
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 $(call inherit-product-if-exists, build/target/product/embedded.mk)
@@ -36,11 +38,12 @@ $(call inherit-product-if-exists, vendor/xiaomi/MiuiCamera/config.mk)
 # Device Tree Path
 DEVICE_PATH := device/xiaomi/tulip
 
-# Inherit properties
-$(call inherit-product, $(DEVICE_PATH)/common_prop.mk)
-
-# Inherit properties.mk
-$(call inherit-product, $(DEVICE_PATH)/properties.mk)
+# Inherit properties ($PATH_PROP)
+TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Audio
 PRODUCT_PACKAGES += \
