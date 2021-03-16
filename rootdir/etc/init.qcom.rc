@@ -30,7 +30,6 @@ import /vendor/etc/init/hw/init.msm.usb.configfs.rc
 import /vendor/etc/init/hw/init.target.rc
 import /vendor/etc/init/hw/init.performance.sdm660.rc
 import /vendor/etc/init/hw/init.device.rc
-import /vendor/etc/init/hw/init.safailnet.rc
 import /vendor/etc/init/hw/init.gpuboost.rc
 import /vendor/etc/init/hw/init.cpuboost.rc
 import /vendor/etc/init/hw/init.parallax.rc
