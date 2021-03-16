@@ -231,6 +231,9 @@ ro.vendor.use_data_netmgrd=true
 persist.radio.multisim.config=dsds
 persist.vendor.iwlan.enable=true
 persist.vendor.radio.data_con_rprt=1
+ro.vendor.use_data_netmgrd=true 
+ro.vold.umsdirtyratio=20 
+ro.ril.disable.power.collapse=0
 
 # Rendering
 debug.egl.hw=1 
@@ -249,5 +252,8 @@ ro.vendor.sensors.mot_detect=true
 ro.vendor.sensors.pmd=true 
 ro.vendor.sensors.sta_detect=true
 
+# Power Saver
+power.saving.mode=1
+pm.sleep_mode=1
 
 
