@@ -13,3 +13,6 @@ allow system_server userspace_reboot_exported_prop:file{read};
 allow system_server default_android_service:service_manager { add };
 allow system_server default_android_service:service_manager { find };
 
+
+# Smart Charging
+allow system_server sysfs_battery_supply:file { getattr open read write };
