@@ -15,4 +15,4 @@ allow system_server default_android_service:service_manager { find };
 
 
 # Smart Charging
-allow system_server sysfs_battery_supply:file { getattr open read write };
+#allow system_server sysfs_battery_supply:file { getattr open read write };
