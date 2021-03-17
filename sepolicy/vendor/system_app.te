@@ -78,3 +78,8 @@ set_prop(system_app, gpuboost_prop);
 allow system_app cpuboost_prop:property_service set;
 get_prop(system_app, cpuboost_prop);
 set_prop(system_app, cpuboost_prop);
+
+allow system_app sysfs_battery_supply:dir { search };
+allow system_app sysfs_battery_supply:file { read };
+allow system_app sysfs_battery_supply:file { open };
+allow system_app sysfs_battery_supply:file { getattr };
