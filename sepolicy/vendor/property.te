@@ -22,3 +22,7 @@ type cpuboost_prop, property_type;
 type cpucore_prop, property_type;
 type lkm_prop, property_type;
 type tcp_prop, property_type;
+
+#Power
+type power_prop, property_type;
+type vendor_power_prop, property_type;
