@@ -582,7 +582,9 @@ PRODUCT_HOST_PACKAGES += \
 
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
+    $(COMMON_PATH) \
+    hardware/google/interfaces \
+    hardware/google/pixel
 
 # Shims
 PRODUCT_PACKAGES += \
