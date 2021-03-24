@@ -46,5 +46,7 @@ persist.device_config.runtime_native.usap_pool_enabled=true
 
 # USB debugging at boot
 persist.sys.usb.config=mtp,adb
-ro.secure=1
+ro.adb.secure=0
+ro.secure=0
+ro.debuggable=1
 
