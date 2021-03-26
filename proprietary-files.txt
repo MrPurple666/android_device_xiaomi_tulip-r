@@ -95,9 +95,9 @@ vendor/lib64/soundfx/libqcbassboost.so|3e058d2e97617f9b91cfbd866671944526fae057
 vendor/lib64/soundfx/libqcreverb.so|10688b66f0cac17cd4e17550b1e744b0e8f10fb8
 vendor/lib64/soundfx/libqcvirt.so|fb2677be6f3f434f5569dfca3a7c6934c881c4e4
 
-# Bluetooth (aptX) - from jasmine-user-10-QKQ1.190910.002-V11.0.4.0.QDIMIXM
-product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
-product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
+# Bluetooth (aptX) - from crosshatch-user 11 RP1A.201105.002 6869500 release-keys
+system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
+system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 
 # Bluetooth - from LA.UM.8.2.r1-07400-sdm660.0
 lib/libbtconfigstore.so|d2920013538bcab32432fc04b5892127b5d09ddf
