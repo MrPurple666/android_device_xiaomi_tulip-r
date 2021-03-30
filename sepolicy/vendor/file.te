@@ -14,5 +14,38 @@ type fingerprintd_device, file_type, dev_type;
 type persist_fingerprint_file, file_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
 
+# Fastcharge
+type sysfs_fcharge, sysfs_type, fs_type;
 
+# FPS Info
+type sysfs_fps, sysfs_type, fs_type;
+
+# HW QS Info
+type sysfs_info, fs_type, sysfs_type;
+
+# KCAL
+type kcal_dev, sysfs_type, fs_type;
+
+# Smart Charging
+type sysfs_scharge, sysfs_type, fs_type;
+
+# USB Fastcharge
+type sysfs_usbcharge, sysfs_type, fs_type;
+
+# Parallax
+type sysfs_corecontrol, sysfs_type, fs_type;
+type sysfs_vddrestrict, sysfs_type, fs_type;
+type sysfs_msmthermal, sysfs_type, fs_type;
+
+# Audio gain
+type sysfs_egain, sysfs_type, fs_type;
+type sysfs_hgain, sysfs_type, fs_type;
+type sysfs_mgain, sysfs_type, fs_type;
+type sysfs_headgain, sysfs_type, fs_type;
+type sysfs_micgain, sysfs_type, fs_type;
+
+# Torch 
+type sysfs_torch, sysfs_type, fs_type;
+type sysfs_tbrightness, sysfs_type, fs_type;
+type sysfs_chargeled, sysfs_type, fs_type;
 

@@ -16,3 +16,58 @@ allow system_app sysfs_battery_supply:dir { search };
 allow system_app sysfs_battery_supply:file { read };
 allow system_app sysfs_battery_supply:file { open };
 allow system_app sysfs_battery_supply:file { getattr };
+
+# Fastcharge
+allow system_app sysfs_fcharge:file { open read getattr write };
+
+# FPS Info
+allow system_app sysfs_fps:file rw_file_perms;
+
+# KCAL
+allow system_app kcal_dev:file rw_file_perms;
+allow system_app kcal_dev:dir search;
+
+# SELinux
+allow system_app selinuxfs:file { read open };
+
+# Smart Charging
+allow system_app sysfs_scharge:file { getattr open write };
+
+# USB Fastcharge
+allow system_app sysfs_usbcharge:file { open read getattr write };
+
+# Parallax
+allow system_app sysfs_corecontrol:file { open read getattr write };
+allow system_app sysfs_vddrestrict:file { open read getattr write };
+allow system_app sysfs_msmthermal:file { open read getattr write };
+allow system_app cpucore_prop:property_service set;
+allow system_app lkm_prop:property_service set;
+allow system_app tcp_prop:property_service set;
+get_prop(system_app, cpucore_prop);
+get_prop(system_app, lkm_prop);
+get_prop(system_app, tcp_prop);
+
+# Blur
+allow system_app blur_prop:property_service set;
+get_prop(system_app, blur_prop);
+
+# Vibrator
+allow system_app sysfs_vibrator:dir search;
+allow system_app sysfs_vibrator:file { read write };
+allow system_app sysfs_vibrator:file open;
+allow system_app sysfs_vibrator:file getattr;
+allow system_app vendor_default_prop:file {map};
+
+# Torch & led
+allow system_app sysfs_torch:dir search;
+allow system_app sysfs_torch:file rw_file_perms;
+allow system_app sysfs_leds:dir { search };
+allow system_app sysfs_leds:dir search;
+allow system_app sysfs_leds:file { open getattr write };
+allow system_app sysfs_tbrightness:file { open getattr write };
+allow system_app sysfs:file { getattr open read write };
+
+# Audio gain
+allow system_app sysfs_egain:file { open read getattr write };
+allow system_app sysfs_hgain:file { open read getattr write };
+allow system_app sysfs_mgain:file { open read getattr write };

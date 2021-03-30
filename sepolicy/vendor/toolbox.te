@@ -1,0 +1,7 @@
+# Parallax
+allow toolbox cpucore_prop:property_service { set };
+allow toolbox lkm_prop:property_service { set };
+allow toolbox tcp_prop:property_service { set };
+
+# Blur
+allow toolbox blur_prop:property_service { set };

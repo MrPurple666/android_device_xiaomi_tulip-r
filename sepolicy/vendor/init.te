@@ -14,3 +14,19 @@ allow init socket_device:sock_file { unlink setattr create };
 
 allow init blkio_dev:file {create};
 
+
+# Fastcharge
+allow init sysfs_fcharge:file { write open };
+
+# SELinux
+allow init su:process { noatsecure  rlimitinh  siginh  transition };
+
+# USB Fastcharge
+allow init sysfs_usbcharge:file { write open };
+
+
+allow init vendor_file:file { execute execute_no_trans };
+allow init vendor_configs_file:file { mounton };
+
+# Vibrator
+allow init sysfs_leds: file { open };
