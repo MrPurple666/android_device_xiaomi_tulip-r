@@ -3,6 +3,7 @@ get_prop(platform_app, theme_prop)
 # FPS Info
 allow platform_app sysfs_fps:file { getattr open read };
 allow platform_app sysfs_graphics:dir search;
+allow platform_app default_android_service:service_manager { find };
 
 # Torch
 allow platform_app sysfs_leds:dir search;

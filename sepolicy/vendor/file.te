@@ -14,14 +14,16 @@ type fingerprintd_device, file_type, dev_type;
 type persist_fingerprint_file, file_type;
 type sysfs_fingerprint, sysfs_type, fs_type;
 
+# Hall Switch
+type hall_dev, sysfs_type, fs_type;
+type thermal_data_file, file_type, data_file_type;
+
 # Fastcharge
 type sysfs_fcharge, sysfs_type, fs_type;
 
 # FPS Info
 type sysfs_fps, sysfs_type, fs_type;
-
-# HW QS Info
-type sysfs_info, fs_type, sysfs_type;
+type sysfs_info, sysfs_type, fs_type;
 
 # KCAL
 type kcal_dev, sysfs_type, fs_type;
