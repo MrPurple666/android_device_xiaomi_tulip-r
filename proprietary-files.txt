@@ -506,6 +506,12 @@ vendor/lib64/vendor.qti.hardware.perf@2.0.so|b05e762bf5c7e86b0d6c1be4c8ae91e3f70
 vendor/lib/libqti-perfd-client.so|4fec2515f09cf18704e2501da071c7a28d4a61c7
 vendor/lib64/libqti-perfd-client.so|d6502c16ab4dd7642641b6a8cbb061847ff5cb2d
 
+# Perf - From LA.UM.8.6.2.r1-08600-89xx.0
+vendor/lib64/libadaptlaunch.so|cf784401fc827e5195d595a6d855ec89ea8c22bf
+vendor/lib64/libappclassifier.so|d5956c2dc9344ddcca0e78d84c393320c2e0cc97
+vendor/lib64/libgameoptfeature.so|b135489d253f0a8d7884238fe7887eb85b87745d 
+vendor/lib64/liblearningmodule.so|a9390d0ef1ec82c97a61035ec686c1d094fdca98
+
 # Peripheral manager - from LA.UM.8.2.r1-07400-sdm660.0
 vendor/bin/pm-proxy|3182c937d93cc02c6721c053f57fc6794ad7edb3
 vendor/bin/pm-service|d41dabf5e4830f93b267d668d37e72aedae48163
@@ -1600,4 +1606,5 @@ vendor/etc/thermal-engine-performance.conf
 vendor/etc/thermal-engine-map.conf
 vendor/etc/thermal-engine-default.conf
 vendor/etc/thermal-engine.conf
+
 
