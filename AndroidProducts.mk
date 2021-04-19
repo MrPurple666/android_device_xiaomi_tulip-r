@@ -14,9 +14,9 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/dot_tulip.mk
+    $(LOCAL_DIR)/bliss_tulip.mk
 
 COMMON_LUNCH_CHOICES := \
-   dot_tulip-user \
-   dot_tulip-userdebug \
-   dot_tulip-eng
+   bliss_tulip-user \
+   bliss_tulip-userdebug \
+   bliss_tulip-eng

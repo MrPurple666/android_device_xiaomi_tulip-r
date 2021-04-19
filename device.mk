@@ -58,7 +58,7 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Adapt Launch 
 PRODUCT_COPY_FILES += \
-$(COMMON_PATH)/configs/lm/AdaptLaunchFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AdaptLaunchFeature.xml \
+$(LOCAL_PATH)/configs/lm/AdaptLaunchFeature.xml:$(TARGET_COPY_OUT_VENDOR)/etc/lm/AdaptLaunchFeature.xml \
 
 # Audio
 PRODUCT_PACKAGES += \
