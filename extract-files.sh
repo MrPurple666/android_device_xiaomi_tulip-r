@@ -33,7 +33,7 @@ LINEAGE_ROOT="$MY_DIR"/../../..
 
 DEVICE_BLOB_ROOT="$AOSP_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
-HELPER="$ROOT"/vendor/dot/build/tools/extract_utils.sh
+HELPER="$ROOT"/vendor/kang/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
