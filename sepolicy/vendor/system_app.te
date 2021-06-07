@@ -1,14 +1,10 @@
-allow system_app vendor_default_prop:file { getattr open read };
-allow system_app wificond:binder call;
+
 allow system_app default_android_service:service_manager { find };
-allow system_app hal_mlipay_default:binder call;
+
 
 
 allow system_app hall_dev:file rw_file_perms;
 allow system_app hall_dev:dir search;
-allow system_app sysfs_thermal:file rw_file_perms;
-allow system_app sysfs_thermal:dir search;
-allow system_app sysfs_vibrator:file rw_file_perms;
 
 set_prop(system_app, system_prop);
 
@@ -52,7 +48,7 @@ allow system_app blur_prop:property_service set;
 get_prop(system_app, blur_prop);
 
 # Vibrator
-allow system_app sysfs_vibrator:dir search;
+allow system_app sysfs_vibrator:file rw_file_perms;
 allow system_app sysfs_vibrator:file { read write };
 allow system_app sysfs_vibrator:file open;
 allow system_app sysfs_vibrator:file getattr;
