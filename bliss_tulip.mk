@@ -1,3 +1,4 @@
+# I'm (Mr_Purple_666) not have more condition's to maintain this device tree so that's deprecate for now
 #
 # Copyright (C) 2018-2019 The LineageOS Project
 #
