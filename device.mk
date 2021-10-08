@@ -520,6 +520,7 @@ PRODUCT_COPY_FILES += \
 
 # QMI
 PRODUCT_PACKAGES += \
+$(call inherit-product, external/json-c/Android.configure.mk)
     libjson
 
 # QTI Performance
