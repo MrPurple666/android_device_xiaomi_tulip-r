@@ -551,6 +551,8 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    android.hardware.radio.deprecated@1.0 \
+    android.hardware.radio.deprecated@1.0.vendor \  
     android.hardware.radio@1.4 \
     android.hardware.radio@1.2 \
     android.hardware.radio.config@1.1 \
